@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taksh P. Diyora - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Azaret+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #287294;
+      --secondary: #023246;
+      --light: #f6f6f6;
+      --accent: #d3d4ce;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--light);
+      color: var(--secondary);
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: var(--primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      color: white;
+    }
+
+    header h1 {
+      font-family: 'Azaret Mono', monospace;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .menu-btn {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-btn div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+      .menu-btn {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: var(--primary);
+        padding: 1rem;
+        border-radius: 8px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+      }
+    }
+
+    section {
+      padding: 4rem 2rem;
+    }
+
+    .intro {
+      background-color: var(--secondary);
+      color: white;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .about, .projects, .contact {
+      background-color: white;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-family: 'Azaret Mono', monospace;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background-color: var(--light);
+      border-left: 5px solid var(--primary);
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .contact p {
+      margin: 0.5rem 0;
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: var(--primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Taksh P. Diyora</h1>
+    <div class="menu-btn" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <h2>Hello, I'm Taksh</h2>
+    <p>Computer Science Student | Developer | Freelancer</p>
+    <a href="#projects" class="btn">View Projects</a>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <p>I’m an 18-year-old Computer Science student at Dharmsinh Desai University. I'm passionate about building practical software solutions — from desktop applications to modern web experiences.</p>
+    <p><strong>Technical Skills:</strong> C++, Python, HTML, CSS, JavaScript, React, PHP, MySQL</p>
+    <p><strong>Other Skills:</strong> Content Writing, UI/UX Design</p>
+    <p><strong>Freelance Goal:</strong> To support my education and expenses through real-world projects and creative freelancing.</p>
+  </section>
+
+  <section class="projects" id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>SWASTIK eCommerce</h3>
+        <p>A premium-style eCommerce site built with HTML/CSS and custom transitions.</p>
+      </div>
+      <div class="project-card">
+        <h3>Hotel Management System</h3>
+        <p>A C++ desktop app using file handling and session-based admin features.</p>
+      </div>
+      <div class="project-card">
+        <h3>Autonomous Drone Delivery System</h3>
+        <p>SSIP Project focused on intelligent drone routing and delivery automation.</p>
+      </div>
+      <div class="project-card">
+        <h3>Automobile Service System</h3>
+        <p>A PHP-MySQL based system for online vehicle service booking and management.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> taksh.diyora@email.com</p>
+    <p><strong>LinkedIn:</strong> <a href="#" style="color: var(--primary);">linkedin.com/in/takshdiyora</a></p>
+    <p><strong>GitHub:</strong> <a href="#" style="color: var(--primary);">github.com/takshdiyora</a></p>
+    <p><strong>Freelance Availability:</strong> Open for content writing & web projects</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Taksh Pankajbhai Diyora. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
